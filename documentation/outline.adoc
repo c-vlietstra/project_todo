@@ -1,0 +1,151 @@
+= SPEC-001: ToDo App with Flutter, Node.js/Express, and PouchDB
+
+:sectnums:
+
+:toc:
+
+
+
+== Background
+
+
+
+The development of a ToDo application serves as a portfolio project to demonstrate proficiency in Flutter for front-end development, Node.js/Express for backend API services, and PouchDB as a serverless, document-oriented database similar to MongoDB. This project aims to showcase the ability to build a cross-platform mobile application with a focus on modern, scalable technologies and the adaptability to learn new database management systems.
+
+
+
+== Requirements
+
+
+
+The application will follow the MoSCoW prioritization to ensure a focused and efficient development process.
+
+
+
+.Must Have
+
+* Cross-platform application support using Flutter.
+
+* User authentication to allow for personal ToDo lists.
+
+* CRUD operations for ToDo items.
+
+* Serverless database integration with PouchDB for storing ToDo items.
+
+* RESTful API server using NodeJS/Express for handling business logic and database operations.
+
+
+
+.Should Have
+
+* Real-time updates of ToDo items across devices.
+
+* Task prioritization within the app.
+
+
+
+.Could Have
+
+* Task sharing capabilities with other users.
+
+* Push notifications for reminders.
+
+
+
+.Won't Have (for now)
+
+* Integration with external calendars or productivity tools.
+
+* Offline access and syncing capabilities.
+
+
+
+== Method
+
+
+
+=== Architecture Overview
+
+
+
+The application architecture includes a Flutter-based front-end, a Node.js/Express backend API, and PouchDB for database management. This combination supports a lightweight, scalable, and easily deployable application suitable for portfolio demonstration.
+
+
+
+=== Database Integration with PouchDB
+
+
+
+PouchDB is chosen for its simplicity, serverless nature, and MongoDB-like syntax, facilitating ease of use and learning. The database will store user and task data, allowing for easy setup and execution.
+
+
+
+.Database Schema
+
+* Users Collection: `UserID`, `Username`, `Email`, `PasswordHash`, `ProfileImage`.
+
+* Tasks Collection: `TaskID`, `UserID`, `Title`, `Description`, `Priority`, `Status`, `DueDate`.
+
+
+
+=== API Design
+
+
+
+RESTful APIs will be implemented for user authentication, task management, and password recovery, providing a simple yet effective interface for the Flutter frontend. All endpoints will include versioning (e.g., `/api/v1/`).
+
+
+
+.API Endpoints
+
+* User Authentication: `/api/v1/auth` for login/signup, session checks, and password recovery.
+
+* Tasks Management: `/api/v1/tasks` for CRUD operations on tasks.
+
+
+
+=== Flutter Frontend Design
+
+
+
+The Flutter app will feature multiple screens for user interaction, including authentication, task viewing, editing, and creation, enriched with animations and transitioning effects for a more dynamic user experience.
+
+
+
+.Technologies Used
+
+* Flutter for cross-platform mobile development.
+
+* Dart for programming the Flutter app.
+
+* Provider package for state management.
+
+* HTTP package for RESTful API communication.
+
+
+
+== Implementation
+
+The project timeline has been extended to 8 weeks, incorporating 2 weeks dedicated to learning and training on PouchDB and Provider.
+
+1. **Weeks 1-2**: Dedicated learning phase for PouchDB and Provider, including practical exercises.
+2. **Week 3**: Setup project structure, initialize Git repository, and create basic Flutter app layout with introductory animations.
+3. **Week 4**: Develop the Node.js/Express API, integrate PouchDB, and implement user authentication along with the API versioning.
+4. **Week 5**: Implement CRUD operations for tasks in the API and integrate these with the Flutter frontend, ensuring smooth animations for task interactions.
+5. **Weeks 6-8**: Finalize the UI/UX in Flutter, ensure real-time updates are functioning with animations, and conduct thorough testing and refinements.
+
+
+
+== Milestones
+
+1. **Learning and Training Completion**: Completion of the dedicated learning phase for PouchDB and Provider.
+2. **Project Setup and Initial Commit**: Completion of project scaffolding for both frontend and backend, with initial animations setup.
+3. **Backend API and Database Integration**: Functional API with authentication, password recovery, and basic task management.
+4. **Frontend-Backend Integration**: Complete integration of Flutter frontend with backend APIs, enriched with animations.
+5. **Feature Completion and Testing**: All planned features implemented and tested, with a focus on dynamic animations and user experience.
+
+
+
+== Gathering Results
+
+Upon completion, the application will be evaluated based on the ease of setup, functionality of the CRUD operations, real-time updates with animations, and overall user experience. Feedback will be solicited from peers and potential employers to assess the application's impact on the developer's portfolio.

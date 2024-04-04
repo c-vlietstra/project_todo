@@ -1,0 +1,99 @@
+= SPEC-002: Back-end Development Plan for ToDo App
+
+:sectnums:
+
+:toc:
+
+
+
+== Background
+
+
+
+This section outlines the back-end development plan for the ToDo application, including adjustments to the database schema and API endpoints based on feedback. The plan incorporates API versioning, additional user fields, and enhanced user management functionalities.
+
+
+
+== Database Schema Adjustments
+
+
+
+=== Users Collection
+
+
+
+* `UserID` (String, Unique, Primary Key): A unique identifier for each user.
+
+* `Username` (String, Unique): A unique username for the user.
+
+* `Email` (String, Unique): User's email address.
+
+* `PasswordHash` (String): Hash of the user's password for security.
+
+* `ProfileImage` (String, Optional): URL to the user's profile image.
+
+
+
+=== Tasks Collection
+
+
+
+* `TaskID` (String, Unique, Primary Key): A unique identifier for each task.
+
+* `UserID` (String): Identifier linking the task to a user.
+
+* `Title` (String): Title of the task.
+
+* `Description` (String, Optional): A longer description of the task.
+
+* `Priority` (Integer): A numerical value indicating the task's priority.
+
+* `Status` (String): Status of the task (e.g., "Pending", "Completed").
+
+* `DueDate` (Date, Optional): The date by which the task should be completed.
+
+
+
+== API Endpoints with Versioning and New Endpoints
+
+
+
+The API endpoints have been prefixed with `/api/v1/` to indicate the first version of the API and include a new endpoint for password recovery.
+
+
+
+=== User Authentication and Management
+
+
+
+* `POST /api/v1/auth/register`: Register a new user.
+
+* `POST /api/v1/auth/login`: Authenticate a user and return a session token.
+
+* `GET /api/v1/auth/logout`: Log out a user, invalidating their session token.
+
+* `POST /api/v1/auth/recover`: Initiates a password recovery process for the user.
+
+
+
+=== Tasks Management
+
+
+
+* `POST /api/v1/tasks`: Create a new task.
+
+* `GET /api/v1/tasks`: Retrieve all tasks for the logged-in user.
+
+* `GET /api/v1/tasks/{taskID}`: Retrieve a specific task by its ID.
+
+* `PUT /api/v1/tasks/{taskID}`: Update an existing task.
+
+* `DELETE /api/v1/tasks/{taskID}`: Delete a task.
+
+
+
+== Finalization and Next Steps
+
+
+
+This back-end development plan sets the stage for a robust and secure ToDo application, ready for implementation. The next steps involve detailing the implementation strategy and milestones for tracking progress.
