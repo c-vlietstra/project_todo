@@ -30,8 +30,6 @@ The application will follow the MoSCoW prioritization to ensure a focused and ef
 * Integration with external calendars or productivity tools.
 * Offline access and syncing capabilities.
 
-
-
 == Method
 
 === Architecture Overview
